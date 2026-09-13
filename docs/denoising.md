@@ -17,7 +17,7 @@ A denoiser creates a fragment node. It can read input visibility and encoded nor
 ```ts
 import { uv } from "three/tsl";
 import type { Node } from "three/webgpu";
-import type { Denoiser, DenoiserContext } from "n8ao-webgpu";
+import type { Denoiser, DenoiserContext } from "three-n8ao-webgpu";
 
 // A minimal pass-through filter, useful as a starting point.
 class PassthroughDenoiser implements Denoiser {

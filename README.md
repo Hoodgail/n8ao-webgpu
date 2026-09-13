@@ -2,7 +2,7 @@
 
 Screen-space ambient occlusion for **Three.js r186**, written in TypeScript and TSL for native WebGPU.
 
-A fork of [N8python/n8ao](https://github.com/N8python/n8ao), maintained as `n8ao-webgpu`.
+A fork of [N8python/n8ao](https://github.com/N8python/n8ao), maintained as `three-n8ao-webgpu`.
 
 ![Contact study](public/previews/contact.webp)
 
@@ -11,12 +11,12 @@ A fork of [N8python/n8ao](https://github.com/N8python/n8ao), maintained as `n8ao
 ## Get started
 
 ```sh
-npm install n8ao-webgpu three@~0.186.0
+npm install three-n8ao-webgpu three@~0.186.0
 ```
 
 ```ts
 import { RenderPipeline } from "three/webgpu";
-import { n8ao } from "n8ao-webgpu";
+import { n8ao } from "three-n8ao-webgpu";
 
 // renderer is an initialized WebGPURenderer; scene and camera are yours.
 const ao = n8ao(scene, camera, { aoRadius: 1.5, intensity: 3 });

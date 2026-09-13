@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import * as GPU from "three/webgpu";
 import { texture, uv } from "three/tsl";
-import { N8AONode } from "n8ao-webgpu";
+import { N8AONode } from "three-n8ao-webgpu";
 import { createScene } from "./scene.js";
 import { encode } from "./readback.js";
 export async function runCase(spec) {

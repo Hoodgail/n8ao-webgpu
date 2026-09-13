@@ -5,7 +5,7 @@ N8AO WebGPU adds screen-space ambient occlusion to a Three.js scene. It captures
 ## Install
 
 ```sh
-npm install n8ao-webgpu three@~0.186.0
+npm install three-n8ao-webgpu three@~0.186.0
 ```
 
 Use one copy of Three.js throughout your application. The package targets **Three.js r186**, an ES module build, and a browser with native WebGPU. Your application must run on HTTPS or localhost.
@@ -14,7 +14,7 @@ Use one copy of Three.js throughout your application. The package targets **Thre
 
 ```ts
 import { WebGPURenderer, RenderPipeline } from "three/webgpu";
-import { n8ao } from "n8ao-webgpu";
+import { n8ao } from "three-n8ao-webgpu";
 
 const renderer = new WebGPURenderer({ antialias: false });
 renderer.setSize(window.innerWidth, window.innerHeight);

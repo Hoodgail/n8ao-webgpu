@@ -1,5 +1,5 @@
 {
-  "name": "n8ao-webgpu",
+  "name": "three-n8ao-webgpu",
   "version": "1.0.0",
   "description": "Screen-space ambient occlusion for Three.js TSL and WebGPU.",
   "type": "module",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/Hoodgail/n8ao-webgpu/issues"
   },
-  "homepage": "https://hoodgail.github.io/n8ao-webgpu/",
+  "homepage": "https://hoodgail.github.ion8ao-webgpu/",
   "publishConfig": {
     "access": "public"
   },

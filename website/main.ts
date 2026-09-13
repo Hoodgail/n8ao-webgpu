@@ -67,7 +67,7 @@ function optionsCode(): string {
 }
 function integrationCode(): string {
   const c = viewer.configuration;
-  return `import { RenderPipeline } from 'three/webgpu';\nimport { n8ao } from 'n8ao-webgpu';\n\nconst ao = n8ao(scene, camera, {\n  aoRadius: ${c?.aoRadius ?? 1.5},\n  intensity: ${c?.intensity ?? 3},\n  halfRes: ${c?.halfRes ?? false},\n  accumulate: ${c?.accumulate ?? true},\n});\n\nconst pipeline = new RenderPipeline(renderer);\npipeline.outputNode = ao;\nrenderer.setAnimationLoop(() => pipeline.render());`;
+  return `import { RenderPipeline } from 'three/webgpu';\nimport { n8ao } from 'three-n8ao-webgpu';\n\nconst ao = n8ao(scene, camera, {\n  aoRadius: ${c?.aoRadius ?? 1.5},\n  intensity: ${c?.intensity ?? 3},\n  halfRes: ${c?.halfRes ?? false},\n  accumulate: ${c?.accumulate ?? true},\n});\n\nconst pipeline = new RenderPipeline(renderer);\npipeline.outputNode = ao;\nrenderer.setAnimationLoop(() => pipeline.render());`;
 }
 function updateControls(): void {
   const c = viewer.configuration;
@@ -249,13 +249,13 @@ element("#display-options").addEventListener("click", (event) => {
 element("#reset-camera").addEventListener("click", () => viewer.resetCamera());
 element("#install-copy").addEventListener(
   "click",
-  () => void copy("npm install n8ao-webgpu three@~0.186.0"),
+  () => void copy("npm install three-n8ao-webgpu three@~0.186.0"),
 );
 element("#copy-settings").addEventListener(
   "click",
   () =>
     void copy(
-      `import { n8ao } from 'n8ao-webgpu';\n\nconst ao = n8ao(scene, camera, ${optionsCode()});`,
+      `import { n8ao } from 'three-n8ao-webgpu';\n\nconst ao = n8ao(scene, camera, ${optionsCode()});`,
     ),
 );
 element("#copy-code").addEventListener(

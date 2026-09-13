@@ -31,7 +31,7 @@ Both create a node suitable for `RenderPipeline.outputNode`. The camera must be 
 `N8AOPass` copies its output to a native render target or the screen.
 
 ```ts
-import { N8AOPass } from "n8ao-webgpu";
+import { N8AOPass } from "three-n8ao-webgpu";
 
 const effect = new N8AOPass(scene, camera, width, height);
 effect.render(renderer, destination);
