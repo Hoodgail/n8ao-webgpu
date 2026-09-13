@@ -1,6 +1,6 @@
 {
   "name": "three-n8ao-webgpu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Screen-space ambient occlusion for Three.js TSL and WebGPU.",
   "type": "module",
   "main": "./dist/index.js",

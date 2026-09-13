@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0
+## 1.0.1
 
 - Native Three.js r186 WebGPU rendering with TSL shader graphs.
 - Modular TypeScript API with strict declarations and class-owned resources.
