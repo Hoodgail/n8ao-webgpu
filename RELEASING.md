@@ -14,7 +14,7 @@ npm pack
 
 ## GitHub Pages
 
-In the fork's Settings → Pages, select **GitHub Actions** as the source. The Pages workflow builds the documentation and examples from the default branch. It can also be started manually. The expected URL is https://hoodgail.github.ion8ao-webgpu/.
+In the fork's Settings → Pages, select **GitHub Actions** as the source. The Pages workflow builds the documentation and examples from the default branch. It can also be started manually. The expected URL is https://hoodgail.github.io/n8ao-webgpu/.
 
 ## npm
 
