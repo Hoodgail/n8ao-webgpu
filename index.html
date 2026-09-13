@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#181c19" />
+    <meta
+      name="description"
+      content="Native ambient occlusion for Three.js and WebGPU. Explore interactive scenes, configure denoising, and integrate N8AO with a typed, extensible API."
+    />
+    <title>N8AO WebGPU — Depth in the details</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header">
+      <a class="brand" href="#overview" aria-label="N8AO WebGPU home"
+        ><span class="brand-mark">n8</span
+        ><span
+          >n8ao<span class="brand-slash"> / </span
+          ><span class="brand-light">webgpu</span></span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#overview" data-nav="overview">Overview</a
+        ><a href="#docs/quick-start" data-nav="docs">Documentation</a
+        ><a href="#examples/contact" data-nav="examples"
+          >Examples <span class="nav-count">06</span></a
+        >
+      </nav>
+      <a
+        class="github-link"
+        href="https://github.com/Hoodgail/n8ao-webgpu"
+        target="_blank"
+        rel="noreferrer"
+        >GitHub <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main id="main">
+      <div id="showcase">
+        <section class="hero" id="hero">
+          <div class="eyebrow">
+            <span class="status-dot"></span> NATIVE WEBGPU
+            <span class="eyebrow-separator">/</span> THREE.JS r186
+          </div>
+          <div class="hero-row">
+            <div>
+              <h1>Depth in<br />the <em>details.</em></h1>
+              <p class="hero-description">
+                Ambient occlusion that makes a scene feel grounded.<br />Built
+                for Three.js, written in TypeScript, powered by TSL.
+              </p>
+            </div>
+            <div class="hero-aside">
+              <span class="version-pill">v1.0.0</span>
+              <p>Small shadows.<br />A more convincing world.</p>
+              <button
+                id="install-copy"
+                class="install-command"
+                aria-label="Copy npm install command"
+              >
+                <span>npm i n8ao-webgpu</span
+                ><span class="copy-icon" aria-hidden="true">⧉</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="playground-section" aria-label="Interactive example">
+          <div class="section-heading">
+            <div>
+              <span class="section-index">01 / EXPLORE</span>
+              <h2 id="scene-title">Contact study</h2>
+            </div>
+            <p id="scene-description">
+              Ground objects with subtle contact shadows and stable, soft
+              occlusion.
+            </p>
+          </div>
+          <div class="playground">
+            <div class="canvas-wrap" id="canvas-wrap">
+              <div class="viewer-top">
+                <span class="live-chip"
+                  ><span class="status-dot"></span> LIVE RENDER</span
+                ><button
+                  class="subtle-button"
+                  id="reset-camera"
+                  title="Reset camera"
+                  aria-label="Reset camera"
+                >
+                  ↺
+                </button>
+              </div>
+              <div id="viewer-message" role="status">
+                <span class="spinner"></span>
+                <p>Starting WebGPU…</p>
+              </div>
+              <div class="viewer-bottom">
+                <span id="render-status">INITIALIZING</span
+                ><span
+                  >DRAG TO ORBIT <span class="viewer-divider">·</span> SCROLL TO
+                  ZOOM</span
+                >
+              </div>
+            </div>
+            <aside class="controls" aria-label="Render settings">
+              <div class="controls-heading">
+                <h3>Make it yours</h3>
+                <span class="control-icon">≡</span>
+              </div>
+              <fieldset>
+                <legend>Display</legend>
+                <div class="segmented" id="display-options">
+                  <button
+                    data-mode="Combined"
+                    class="selected"
+                    aria-pressed="true"
+                  >
+                    Scene</button
+                  ><button data-mode="AO" aria-pressed="false">AO</button
+                  ><button data-mode="Split" aria-pressed="false">Split</button>
+                </div>
+              </fieldset>
+              <label class="select-label" for="quality"
+                >Quality<select id="quality">
+                  <option>Performance</option>
+                  <option>Low</option>
+                  <option selected>Medium</option>
+                  <option>High</option>
+                  <option>Ultra</option>
+                  <option>Neural-Low</option>
+                  <option>Neural-Medium</option>
+                  <option>Neural-High</option>
+                </select></label
+              ><label class="range-label" for="radius"
+                ><span>Radius</span
+                ><output id="radius-value">1.50</output></label
+              ><input
+                id="radius"
+                type="range"
+                min="0.1"
+                max="5"
+                step="0.05"
+                value="1.5"
+              /><label class="range-label" for="intensity"
+                ><span>Intensity</span
+                ><output id="intensity-value">3.0</output></label
+              ><input
+                id="intensity"
+                type="range"
+                min="0"
+                max="8"
+                step="0.1"
+                value="3"
+              /><label class="range-label" for="falloff"
+                ><span>Distance falloff</span
+                ><output id="falloff-value">1.00</output></label
+              ><input
+                id="falloff"
+                type="range"
+                min="0.05"
+                max="3"
+                step="0.05"
+                value="1"
+              />
+              <div class="control-divider"></div>
+              <label class="toggle-row" for="half"
+                ><span>Half resolution</span
+                ><input id="half" type="checkbox" role="switch" /></label
+              ><label class="toggle-row" for="accumulate"
+                ><span>Temporal accumulation</span
+                ><input id="accumulate" type="checkbox" role="switch" checked
+              /></label>
+              <p class="control-note" id="control-note">
+                Full resolution · bilateral denoising
+              </p>
+              <button id="copy-settings" class="primary-button">
+                Copy configuration <span aria-hidden="true">↗</span>
+              </button>
+            </aside>
+          </div>
+          <div
+            class="example-strip"
+            id="example-strip"
+            aria-label="Example scenes"
+          ></div>
+        </section>
+        <section class="integration-section">
+          <div>
+            <span class="section-index">02 / INTEGRATE</span>
+            <h2>A few lines.<br />A little more dimension.</h2>
+            <p>
+              One node in your render pipeline. Start with a preset, then tune
+              the details that matter to your scene.
+            </p>
+            <a href="#docs/quick-start" class="text-link"
+              >Read the documentation <span>→</span></a
+            >
+          </div>
+          <div class="code-panel">
+            <div class="code-heading">
+              <span>scene.ts</span
+              ><button id="copy-code" aria-label="Copy integration example">
+                Copy
+              </button>
+            </div>
+            <pre><code id="integration-code"></code></pre>
+          </div>
+        </section>
+        <section class="feature-row">
+          <article>
+            <span>01</span>
+            <h3>Native by design</h3>
+            <p>
+              TSL shaders, WebGPU rendering and a direct RenderPipeline
+              integration.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>A filter for your scene</h3>
+            <p>
+              Bilateral and neural denoising, plus a typed interface for your
+              own filters.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Built to be adjusted</h3>
+            <p>
+              World or screen-space radius, half resolution, depth modes and
+              accumulation.
+            </p>
+          </article>
+        </section>
+      </div>
+      <div id="documentation" hidden>
+        <aside class="docs-sidebar">
+          <span class="section-index">DOCUMENTATION</span>
+          <nav id="docs-nav" aria-label="Documentation sections"></nav>
+          <div class="docs-version">
+            n8ao-webgpu<br /><span
+              >Version 1.0.0 · Three.js r186</span
+            >
+          </div>
+        </aside>
+        <article id="docs-content"></article>
+      </div>
+    </main>
+    <footer>
+      <a class="brand footer-brand" href="#overview"
+        ><span class="brand-mark">n8</span><span>n8ao / webgpu</span></a
+      ><span
+        >Derived from <a href="https://github.com/N8python/n8ao">N8AO</a> by N8
+        and contributors.</span
+      ><span>CC0 · Built with Three.js</span>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/website/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8" /><title>N8AO rendering tests</title>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "/node_modules/three/build/three.module.js",
+      "three/webgpu": "/node_modules/three/build/three.webgpu.js",
+      "three/tsl": "/node_modules/three/build/three.tsl.js",
+      "three/addons/": "/node_modules/three/examples/jsm/",
+      "n8ao-webgpu": "/dist/index.js"
+    }
+  }
+</script>
+<script type="module">
+  import { runCase } from "./render.js";
+  window.runCase = runCase;
+  window.ready = true;
+</script>

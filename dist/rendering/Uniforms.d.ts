@@ -1,0 +1,37 @@
+import type { UniformNode } from "three/webgpu";
+import { Color, Matrix4, Vector2, Vector3 } from "three/webgpu";
+import type { N8AOCamera } from "../types.js";
+export declare function createUniforms(camera: N8AOCamera): {
+    projection: UniformNode<"mat4", Matrix4>;
+    inverseProjection: UniformNode<"mat4", Matrix4>;
+    cameraPosition: UniformNode<"vec3", Vector3>;
+    fullResolution: UniformNode<"vec2", Vector2>;
+    resolution: UniformNode<"vec2", Vector2>;
+    targetResolution: UniformNode<"vec2", Vector2>;
+    near: UniformNode<"float", number>;
+    far: UniformNode<"float", number>;
+    hemisphere: import("three/webgpu").UniformArrayNode<"vec3">;
+    poisson: import("three/webgpu").UniformArrayNode<"vec2">;
+    frame: UniformNode<"float", number>;
+    iteration: UniformNode<"float", number>;
+    radius: UniformNode<"float", number>;
+    denoiseRadius: UniformNode<"float", number>;
+    distanceFalloff: UniformNode<"float", number>;
+    biasOffset: UniformNode<"float", number>;
+    biasMultiplier: UniformNode<"float", number>;
+    intensity: UniformNode<"float", number>;
+    aoTones: UniformNode<"float", number>;
+    renderMode: UniformNode<"float", number>;
+    color: UniformNode<"vec3", Color>;
+    screenSpaceRadius: UniformNode<"bool", boolean>;
+    colorMultiply: UniformNode<"bool", boolean>;
+    gammaCorrection: UniformNode<"bool", boolean>;
+    transparencyAware: UniformNode<"bool", boolean>;
+    fog: UniformNode<"bool", boolean>;
+    fogExp: UniformNode<"bool", boolean>;
+    fogDensity: UniformNode<"float", number>;
+    fogNear: UniformNode<"float", number>;
+    fogFar: UniformNode<"float", number>;
+};
+export type Uniforms = ReturnType<typeof createUniforms>;
+//# sourceMappingURL=Uniforms.d.ts.map

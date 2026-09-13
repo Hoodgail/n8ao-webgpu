@@ -1,0 +1,261 @@
+[
+  {
+    "id": "combined"
+  },
+  {
+    "id": "plane",
+    "scene": "plane"
+  },
+  {
+    "id": "background",
+    "scene": "empty"
+  },
+  {
+    "id": "pipeline-integration",
+    "integration": "pipeline"
+  },
+  {
+    "id": "performance",
+    "quality": "Performance"
+  },
+  {
+    "id": "low",
+    "quality": "Low"
+  },
+  {
+    "id": "medium",
+    "quality": "Medium"
+  },
+  {
+    "id": "high",
+    "quality": "High"
+  },
+  {
+    "id": "ultra",
+    "quality": "Ultra"
+  },
+  {
+    "id": "neural-low",
+    "quality": "Neural-Low"
+  },
+  {
+    "id": "neural-medium",
+    "quality": "Neural-Medium"
+  },
+  {
+    "id": "neural-high",
+    "quality": "Neural-High"
+  },
+  {
+    "id": "ao",
+    "configuration": {
+      "renderMode": 1
+    }
+  },
+  {
+    "id": "no-ao",
+    "configuration": {
+      "renderMode": 2
+    }
+  },
+  {
+    "id": "split",
+    "configuration": {
+      "renderMode": 3
+    }
+  },
+  {
+    "id": "split-ao",
+    "configuration": {
+      "renderMode": 4
+    }
+  },
+  {
+    "id": "half",
+    "configuration": {
+      "halfRes": true
+    }
+  },
+  {
+    "id": "half-no-upsampling",
+    "configuration": {
+      "halfRes": true,
+      "depthAwareUpsampling": false
+    }
+  },
+  {
+    "id": "screen-radius",
+    "configuration": {
+      "screenSpaceRadius": true,
+      "aoRadius": 24
+    }
+  },
+  {
+    "id": "half-screen-radius",
+    "configuration": {
+      "halfRes": true,
+      "screenSpaceRadius": true,
+      "aoRadius": 24
+    }
+  },
+  {
+    "id": "no-denoise",
+    "configuration": {
+      "denoiseIterations": 0
+    }
+  },
+  {
+    "id": "one-denoise",
+    "configuration": {
+      "denoiseIterations": 1
+    }
+  },
+  {
+    "id": "three-denoise",
+    "configuration": {
+      "denoiseIterations": 3
+    }
+  },
+  {
+    "id": "bias",
+    "configuration": {
+      "biasOffset": 0.015,
+      "biasMultiplier": 0.5
+    }
+  },
+  {
+    "id": "gamma",
+    "configuration": {
+      "gammaCorrection": true
+    }
+  },
+  {
+    "id": "tones",
+    "configuration": {
+      "aoTones": 4
+    }
+  },
+  {
+    "id": "tint",
+    "configuration": {
+      "color": [
+        0.3,
+        0.15,
+        0.05
+      ]
+    }
+  },
+  {
+    "id": "tint-no-multiply",
+    "configuration": {
+      "color": [
+        0.3,
+        0.15,
+        0.05
+      ],
+      "colorMultiply": false
+    }
+  },
+  {
+    "id": "zero-intensity",
+    "configuration": {
+      "intensity": 0
+    }
+  },
+  {
+    "id": "accumulate-eight",
+    "configuration": {
+      "accumulate": true
+    },
+    "frames": 8
+  },
+  {
+    "id": "half-odd",
+    "width": 321,
+    "height": 243,
+    "configuration": {
+      "halfRes": true
+    }
+  },
+  {
+    "id": "orthographic",
+    "orthographic": true
+  },
+  {
+    "id": "orthographic-half",
+    "orthographic": true,
+    "configuration": {
+      "halfRes": true
+    }
+  },
+  {
+    "id": "fog-linear",
+    "fog": "linear"
+  },
+  {
+    "id": "fog-exp",
+    "fog": "exp"
+  },
+  {
+    "id": "transparent",
+    "transparency": "normal"
+  },
+  {
+    "id": "transparent-flags",
+    "transparency": "flags",
+    "configuration": {
+      "transparencyAware": true
+    }
+  },
+  {
+    "id": "log-depth",
+    "depth": "log"
+  },
+  {
+    "id": "log-half",
+    "depth": "log",
+    "configuration": {
+      "halfRes": true
+    }
+  },
+  {
+    "id": "reverse-depth",
+    "depth": "reverse"
+  },
+  {
+    "id": "reverse-ortho",
+    "depth": "reverse",
+    "orthographic": true
+  },
+  {
+    "id": "reverse-half",
+    "depth": "reverse",
+    "configuration": {
+      "halfRes": true
+    }
+  },
+  {
+    "id": "camera-reset",
+    "configuration": {
+      "accumulate": true
+    },
+    "frames": 8,
+    "mutate": "camera"
+  },
+  {
+    "id": "resize-reset",
+    "configuration": {
+      "accumulate": true,
+      "halfRes": true
+    },
+    "frames": 8,
+    "mutate": "resize"
+  },
+  {
+    "id": "upstream-sponza",
+    "scene": "upstream-sponza",
+    "configuration": {
+      "aoRadius": 0.75
+    }
+  }
+]

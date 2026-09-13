@@ -1,0 +1,21 @@
+N8AO WebGPU
+Maintained by Hoodgail Benjamin.
+
+Derived from N8AO by N8 and contributors:
+https://github.com/N8python/n8ao
+Original source revision: 0fc15550c98119758e83ed4c2d0e87273bae9ed9
+Original code, blue-noise data and neural model are distributed under CC0-1.0.
+The original license is reproduced in LICENSE.
+
+The Sponza browser-test model is the asset distributed with N8AO's test scenes.
+Sponza atrium model: Crytek; glTF conversion distributed through the glTF Sample
+Models project. This model is used only as a rendering test fixture and is not
+included in the npm package. See tests/assets/README.md for source attribution.
+
+The Draco decoder in tests/assets/draco is from Google's Draco project,
+distributed under Apache-2.0. Its license is included in that directory.
+
+The documentation website uses DM Sans and Instrument Serif through Fontsource.
+These fonts are licensed under the SIL Open Font License 1.1; license notices
+are included with the installed @fontsource packages and in public/licenses.
+Three.js is a separately installed MIT-licensed peer dependency.
